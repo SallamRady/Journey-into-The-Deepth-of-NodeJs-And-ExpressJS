@@ -1,0 +1,161 @@
+/* add to card page */
+div.addProduct {
+  text-align: left;
+  margin-top: 5%;
+  height: 65vh;
+}
+
+div.addProduct h1 {
+  color: #6c6af5;
+  text-decoration: underline;
+  padding: 1.1rem;
+  text-shadow: 1px 1px;
+  text-transform: capitalize;
+}
+
+div.addProduct form div.inputControl {
+  margin: 15px 0;
+}
+
+div.addProduct form div.inputControl label {
+  min-width: 12%;
+  display: inline-block;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btn {
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: navajowhite;
+  border-radius: 8px;
+  background: #6c6af5;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+div.addProduct form input {
+  padding: 0.1rem;
+}
+.btn:hover {
+  box-shadow: 2px 2px 5px #363434;
+  background: #fff;
+  color: #6c6af5;
+}
+
+div.products-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* product card */
+div.product-conainer {
+  background: #80808061;
+  width: 17rem;
+  height: 23rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  margin: 0.7rem;
+  padding: 0.8rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+}
+
+div.product-conainer h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px grey;
+}
+
+div.product-conainer img {
+  border: 0.17rem solid #fffdfd;
+  border-radius: 0.3rem;
+}
+
+div.product-conainer p {
+  font-size: 1.09rem;
+  text-shadow: 1px 1px 2px grey;
+}
+
+div.product-conainer div.actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+div.product-conainer div.actions a {
+  text-decoration: none;
+}
+
+/* Product Details */
+div.productDetails {
+  display: flex;
+}
+
+div.productDetails div.productImg {
+  width: 40%;
+  margin: 1%;
+  padding: 0.9%;
+}
+div.productDetails div.productImg img {
+  width: 100%;
+  height: 25rem;
+}
+
+div.productDetails div.productData {
+  padding: 0.9%;
+  margin: 1%;
+}
+
+div.productDetails div.productData h4 {
+  font-size: 2.2rem;
+  text-shadow: 1px 1px 2px;
+  text-decoration: underline;
+  margin-bottom: 0.6rem;
+}
+
+div.productDetails div.productData p {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+div.productDetails div.productData p.price{
+  font-size: 1.7rem;
+}
+
+div.productDetails div.productData form .btn {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 0.4rem;
+}
+
+div.pagination {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+div.pagination a {
+  padding: 0.5rem;
+  border: 1px solid #6c6af5;
+  margin: 0 0.6rem;
+  text-decoration: none;
+  color: #6c6af5;
+}
+
+div.pagination a:hover,
+div.pagination a:active,
+div.pagination a.active {
+  background-color: #6c6af5;
+  color: #fff;
+}
+
+
+main{
+  height: 68vh;
+}

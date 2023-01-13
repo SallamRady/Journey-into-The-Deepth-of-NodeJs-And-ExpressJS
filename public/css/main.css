@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* #6c6af5 */
+header.main-header {
+  background: #6c6af5;
+  margin: 0;
+  padding: 1.5%;
+}
+
+header.main-header nav ul {
+  list-style-type: none;
+}
+
+header.main-header nav ul li {
+  display: inline-block;
+  padding: 8px;
+}
+
+header.main-header nav ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+header.main-header nav ul li a:hover {
+  text-shadow: 2px 2px 4px #676666;
+}
+
+header.main-header nav ul li a.active {
+  color: black;
+}
+
+.not-found4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+ul.loginLink {
+  float: left;
+}
+
+.footer {
+  width: 100%;
+  height: 95px;
+  background-color: #6c6af5;
+  padding: 2.3rem;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  margin-top: 2rem;
+  font-weight: 500;
+  margin-top: 5rem;
+}
+.footer small a{
+    color: #fff;
+}

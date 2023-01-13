@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8%;
+  flex-direction: column;
+}
+
+div.login h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -4px;
+  color: #6c6af5;
+}
+
+div.login h1 span {
+  color: black;
+}
+
+div.login form {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: column;
+}
+
+div.login form label,
+div.login form input {
+  padding: 0.2rem;
+  margin: 0.1rem;
+}
+
+div.login form button {
+  padding: 0.5rem;
+  margin: 0.2rem;
+  cursor: pointer;
+  background-color: #6c6af5;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 0.199rem;
+  border: 0.5px solid #fff;
+}
+
+div.login form button:hover{
+  background-color: #fff;
+  color: #6c6af5;
+  border-color: #6c6af5;
+}
+
+.forgetPass {
+  font-weight: 700;
+  margin-top: 0.6rem;
+  text-shadow: 0.3px 0.3px 1px;
+}

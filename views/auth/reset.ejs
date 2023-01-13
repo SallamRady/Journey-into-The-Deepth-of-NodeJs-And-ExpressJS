@@ -1,0 +1,40 @@
+<!-- import header file -->
+<%- include('../includes/header.ejs') %> 
+    <!-- css files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/error.css">
+  </head>
+  <body>
+    <!-- import navigation file -->
+    <%- include('../includes/navigation.ejs') %> 
+
+    <main>
+        <div class="login">
+            <h1>Reset Password</h1>
+            <% if (errorMsg) { %>
+             <small style="color:tomato" class="errorMsg"><%= errorMsg %> </small>
+            <% } %>
+            <% if (verify) { %>
+                <small style="color:lightgreen"><%= verify %> </small>
+            <% } %>
+            <% if (errors.length > 0) { %>
+                <% errors.forEach(element => { %>
+                    <small style="color:tomato" class="errorMsg"><%= element %> </small>
+                <% }) %>
+            <% } %>
+            <form action="resetPassword" method="post">
+                <!-- <input type="hidden" name="_csrf" value="<%= //csrfToken %>"/> -->
+                <label>Email</label>
+                <input type="email" name="email" <% if (oldEmail) { %>
+                    value="<%= oldEmail %>"
+                   <% } %>/>
+                <button type="submit">Reset Password</button>
+            </form>
+        </div>
+    </div>
+    </main>
+
+<!-- import footer file -->
+<%- include('../includes/footer.ejs') %> 

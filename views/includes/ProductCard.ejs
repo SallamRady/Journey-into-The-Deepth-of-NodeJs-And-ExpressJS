@@ -1,0 +1,27 @@
+<div class="product-conainer">
+    <h3><%= product.title %> </h3>
+    <% if (editable === true) { %>
+        <img src="/../<%= product.image %>" alt="Product name"/>
+    <% } else { %>
+        <img src="/<%= product.image %>" alt="Product name"/>
+    <% } %>
+    <p><%= product.description %></p>
+    <div class="actions">
+        <a href="/product/<%= product._id %> " class="btn">Details</a>
+        <% if (editable === true) { %>
+            <form action="/admin/editProduct" method="POST">
+                <!-- <input type="hidden" name="_csrf" value="<%= //csrfToken %>"/> -->
+                <input type="hidden" name="id" value="<%= product._id %>"/>
+                <button type="submit" class="btn">Edit</a>
+            </form>
+            <form action="/admin/deleteProduct" method="POST">
+                <!-- <input type="hidden" name="_csrf" value="<%= //csrfToken %>"/> -->
+                <input type="hidden" name="id" value="<%= product._id %>"/>
+                <button type="submit" class="btn">Delete</a>
+            </form>
+        <% } else { %>
+        <!-- import add to card form file -->
+        <%- include('../includes/addToCard.ejs',{id:product._id}) %> 
+        <% } %> 
+    </div>
+</div>

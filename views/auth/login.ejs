@@ -1,0 +1,45 @@
+<!-- import header file -->
+<%- include('../includes/header.ejs') %> 
+    <!-- css files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/error.css">
+  </head>
+  <body>
+    <!-- import navigation file -->
+    <%- include('../includes/navigation.ejs') %> 
+
+    <main>
+        <div class="container">
+            <div class="login">
+                <h1>Log<span>in</span></h1>
+                <% if (errorMsg) { %>
+                 <small style="color:tomato" class="errorMsg"><%= errorMsg %> </small>
+                <% } %>
+                <% if (errors.length > 0) { %>
+                    <% errors.forEach(element => { %>
+                        <small style="color:tomato" class="errorMsg"><%= element %> </small>
+                    <% }) %>
+                <% } %>
+                <form action="login" method="post">
+                    <!-- <input type="hidden" name="_csrf" value="<%= //csrfToken %>"/> -->
+                    <label>Email:<%  %> </label>
+                    <input type="email" name="email" <% if (oldEmail) { %>
+                     value="<%= oldEmail %>"
+                    <% } %>/>
+                    <label>Password</label>
+                    <input type="password" name="password"/>
+                    <button type="submit">Login</button>
+                </form>
+                <a class="forgetPass" href="/resetPassword">Forget Password</a>
+            </div>
+            <div class="image">
+                <img src="images/login-v2.svg" class="loginImg" alt="Login"/>
+            </div>
+        </div>
+    </div>
+    </main>
+
+<!-- import footer file -->
+<%- include('../includes/footer.ejs') %> 

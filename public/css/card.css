@@ -1,0 +1,27 @@
+table{
+    width: 90%;
+    margin: 0.7rem auto;
+    padding: 1rem;
+    /* border: 6px solid deepskyblue; */
+    border-collapse: collapse;
+}
+
+td,th{
+    /* border:5px solid deepskyblue; */
+    padding: 0.3rem;
+}
+
+td.actions{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.danger{
+    background-color: rgb(239, 40, 17);
+    color: #fff;
+}
+
+.danger:hover{
+    background-color:#fff;
+    color:rgb(239, 40, 17);
+}

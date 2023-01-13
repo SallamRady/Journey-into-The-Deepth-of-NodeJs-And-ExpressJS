@@ -1,0 +1,54 @@
+<!-- import header file -->
+<%- include('../includes/header.ejs') %> 
+    <!-- css files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/error.css">
+  </head>
+  <body>
+    <!-- import navigation file -->
+    <%- include('../includes/navigation.ejs') %> 
+
+    <main>
+        <div class="container">
+            <div class="login">
+                <h1>Register</h1>
+                <% if (errorMsg) { %>
+                    <small style="color:tomato" class="errorMsg"><%= errorMsg %> </small>
+                <% } %>
+                <% if (errors.length > 0) { %>
+                    <% errors.forEach(element => { %>
+                        <small style="color:tomato" class="errorMsg"><%= element %> </small>
+                    <% }) %>
+                <% } %>
+                <form action="/register" method="post">
+                    <!-- <input type="hidden" name="_csrf" value="<%= //csrfToken %>"/> -->
+                    <label>Name</label>
+                    <input type="text" name="name" <% if (oldName) { %>
+                     value="<%= oldName %>"
+                    <% } %>/>
+                    <label>Email</label>
+                    <input type="email" name="email" <% if (oldEmail) { %>
+                        value="<%= oldEmail %>"
+                       <% } %>/>
+                    <label>Password</label>
+                    <input type="password" name="password" <% if (oldPassword) { %>
+                        value="<%= oldPassword %>"
+                       <% } %>/>
+                    <label>Confirm Password</label>
+                    <input type="password" name="confirmPassword" <% if (oldConfirmPasswprd) { %>
+                        value="<%= oldConfirmPasswprd %>"
+                       <% } %>/>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+            <div class="image">
+                <img src="images/register-v2.svg" class="loginImg" style="height:  33rem;" alt="Login"/>
+            </div>
+        </div>
+    </div>
+    </main>
+
+<!-- import footer file -->
+<%- include('../includes/footer.ejs') %> 

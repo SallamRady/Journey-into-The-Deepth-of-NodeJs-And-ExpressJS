@@ -1,0 +1,17 @@
+<header class="main-header">
+  <nav class="main-navbar">
+    <ul>
+      <li><a class="<% if (path === '/') {%>active<% } %>" href="/">Home</a></li>
+      <% if (isLogged == true) { %>
+      <li><a class="<% if (path === '/card') {%>active<% } %>" href="/card">Card</a></li>
+      <li><a class="<% if (path === '/orders') {%>active<% } %>" href="/orders">My Orders</a></li>
+      <li><a class="<% if (path === '/admin/addProduct') {%>active<% } %>" href="/admin/addProduct">Add Product</a></li>
+      <li><a class="<% if (path === '/admin/showProducts') {%>active<% } %>" href="/admin/showProducts">Admin Products</a></li>
+      <li style="float: right"><a class="<% if (path === '/logout') {%>active<% } %>" href="/logout">Logout</a></li>
+      <% } else { %>
+      <li style="float: right"><a class="<% if (path === '/register') {%>active<% } %>" href="/register">Register</a></li>
+      <li style="float: right"><a class="<% if (path === '/login') {%>active<% } %>" href="/login">Login</a></li>
+      <% } %>
+    </ul>
+  </nav>
+</header>

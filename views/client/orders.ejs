@@ -1,0 +1,36 @@
+<!-- import header file -->
+<%- include('../includes/header.ejs') %> 
+    <!-- css files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/card.css">
+  </head>
+  <body>
+    <!-- import navigation file -->
+    <%- include('../includes/navigation.ejs') %> 
+
+    <main>
+      <h1>Hello From Express JS</h1>
+      <h2>Your Orders</h2>
+      <br/>
+      <hr/>
+      <ul>
+        <% for(let order of orders) {%>
+            <li>
+                <br/>
+                <h4># Order: <%= order._id %>  - file : <a href="/orders/<%= order._id %>">Download</a> </h4>
+                <ul>
+                    <% for(let item of order.items){ %> 
+                        <li><%= item.productId.title %>  (<%= item.quantity %> )</li>
+                    <% } %> 
+                </ul>
+                <br/>
+                <hr/>
+                <br/>
+            </li>
+        <% } %>   
+      </ul>
+    </main>
+
+<!-- import footer file -->
+<%- include('../includes/footer.ejs') %> 

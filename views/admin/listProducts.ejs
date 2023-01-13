@@ -1,0 +1,19 @@
+<!-- import header file -->
+<%- include('../includes/header.ejs') %> 
+    <!-- css files -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/product.css">
+  </head>
+  <body>
+    <!-- import navigation file -->
+    <%- include('../includes/navigation.ejs') %> 
+
+    <main>
+      <h1>Hello From Express JS - Dashbord</h1>
+      <h2>My Products</h2>
+      <div class="products-Container">
+      <% for(let product of products) {%>
+            <%- include('../includes/ProductCard.ejs',{product:product,editable:editable}) %> 
+      <% } %>
+    </div>
+    </main>

@@ -1,0 +1,68 @@
+<!-- import header file -->
+<%- include('../includes/header.ejs') %> 
+    <!-- css files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/card.css">
+  </head>
+  <body>
+    <!-- import navigation file -->
+    <%- include('../includes/navigation.ejs') %> 
+
+    <main>
+      <h1>Hello From Express JS</h1>
+      <h2>Card Items</h2>
+      <hr/>
+      <table>
+        <thead>
+            <tr>
+                <td><b>Product Title</b></td>
+                <td><b>Product Price</b></td>
+                <td><b>Amount</b></td>
+                <td><b>Cost</b></td>
+                <td><b>Actions</b></td>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let product of products) {%>
+                <tr>
+                    <td><%= product.productId.title %></td>
+                    <td><%= product.productId.price %></td>
+                    <td><%= product.quantity %></td>
+                    <td><%= (product.productId.price * product.quantity) %></td>
+                    <td class="actions">
+                      <form action="/decreaseCardItem" method="POST">
+                        <!-- <input type="hidden" name="_csrf" value="<%= //csrfToken %>"/> -->
+                        <input type="hidden" name="id" value="<%= product.productId._id %>"/>
+                        <button type="submit" class="btn"> - </a>
+                      </form>
+
+                      <form action="/increaseCarItem" method="POST">
+                        <!-- <input type="hidden" name="_csrf" value="<%= //csrfToken %>"/> -->
+                        <input type="hidden" name="id" value="<%= product.productId._id %>"/>
+                        <button type="submit" class="btn"> + </a>
+                      </form>
+
+                      <form action="/deleteCardItem" method="POST">
+                        <!-- <input type="hidden" name="_csrf" value="<%= //csrfToken %>"/> -->
+                        <input type="hidden" name="id" value="<%= product.productId._id %>"/>
+                        <button type="submit" class="btn danger"> x </a>
+                      </form>
+                    </td>
+                </tr>
+              <% } %>
+        </tbody>
+      </table>
+      <div class="card-items">
+      <br/>
+      <hr/>
+      <br/>
+      <form action="/orderNow" method="post" style="text-align: center;">
+        <!-- <input type="hidden" name="_csrf" value="<%= //csrfToken %>"/> -->
+        <button type="submit" class="btn">Order Now!</button>
+      </form>
+    </div>
+    </main>
+
+<!-- import footer file -->
+<%- include('../includes/footer.ejs') %> 

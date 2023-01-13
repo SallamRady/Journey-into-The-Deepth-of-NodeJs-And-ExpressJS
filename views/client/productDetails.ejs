@@ -1,0 +1,28 @@
+<!-- import header file -->
+<%- include('../includes/header.ejs') %> 
+    <!-- css files -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/product.css">
+  </head>
+  <body>
+    <!-- import navigation file -->
+    <%- include('../includes/navigation.ejs') %> 
+
+    <main>
+      <h1>Product Details</h1>
+      <div class="productDetails">
+        <div class="productImg">
+            <img src="../<%= product.image %>" alt="Product name"/>
+        </div>
+        <div class="productData">
+            <h4><%= product.title %> </h4>
+            <p class="price"><strong><%= product.price %> $</strong></p>
+            <p><%=  product.description%> </p>
+            <!-- import add to card form file -->
+            <%- include('../includes/addToCard.ejs',{id:product.id}) %> 
+        </div>
+      </div>
+    </main>
+
+<!-- import footer file -->
+<%- include('../includes/footer.ejs') %> 

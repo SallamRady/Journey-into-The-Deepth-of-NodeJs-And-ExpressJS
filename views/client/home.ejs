@@ -1,0 +1,23 @@
+<!-- import header file -->
+<%- include('../includes/header.ejs') %> 
+    <!-- css files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/product.css">
+  </head>
+  <body>
+    <!-- import navigation file -->
+    <%- include('../includes/navigation.ejs') %> 
+
+    <main>
+      <h1>Hello From Express JS</h1>
+      <h2>My Products</h2>
+      <div class="products-Container">
+      <% for(let product of products) {%>
+            <!-- <h4><%= //product.title %> </h4> -->
+            <%- include('../includes/ProductCard.ejs',{product:product,editable:editable}) %> 
+      <% } %>
+      </div>
+      <%- include('../includes/pagination.ejs',{currentPage,hasNext,hasPrevoious,nextPage,previousPage,lastPage}) %>
+    </main>
+<!-- import footer file -->
+<%- include('../includes/footer.ejs') %> 

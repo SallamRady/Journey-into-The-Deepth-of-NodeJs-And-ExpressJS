@@ -1,0 +1,45 @@
+<!-- import header file -->
+<%- include('../includes/header.ejs') %>
+    <!-- css files -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/product.css" />
+    <link rel="stylesheet" href="../css/auth.css" />
+    </head>
+
+    <body>
+
+        <!-- import navigation file -->
+        <%- include('../includes/navigation.ejs') %>
+        <div class="container">
+            <div class="addProduct">
+                <h1>Edit Product</h1>
+                <form action="/admin/updateProduct" method="POST" enctype="multipart/form-data">
+                    <!-- <input type="hidden" name="_csrf" value="<%= //csrfToken %>"/> -->
+                    <input type="hidden" name="id" value="<%= product._id %>"/>
+                    <div class="inputControl">
+                        <label>Title : </label>
+                        <input type="text" value="<%= product.title %>" name="title" />
+                    </div>
+                    <div class="inputControl">
+                        <label>Price : </label>
+                        <input type="number" value=<%= +product.price %> name="price" />
+                    </div>
+                    <div class="inputControl">
+                        <label>Description : </label>
+                        <input type="text" value="<%= product.description %>" name="description" />
+                    </div>
+                    <div class="inputControl">
+                        <div class="btns">
+                            <label>Image : </label>
+                            <input type="file" name="image" />
+                        </div>
+                    </div>
+                    <button class="btn" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="image" style="width: 50%;">
+                <img src="../<%= product.image %>" class="loginImg" alt="Login" style="height: 28rem;width: 70%;"/>
+            </div>
+        </div>
+            <!-- import footer file -->
+            <%- include('../includes/footer.ejs') %>

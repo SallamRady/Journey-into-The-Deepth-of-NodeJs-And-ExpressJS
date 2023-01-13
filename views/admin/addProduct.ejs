@@ -1,0 +1,48 @@
+<!-- import header file -->
+<%- include('../includes/header.ejs') %>
+    <!-- css files -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/product.css" />
+    <link rel="stylesheet" href="../css/auth.css" />
+    </head>
+
+    <body>
+
+        <!-- import navigation file -->
+        <%- include('../includes/navigation.ejs') %>
+        <div class="container">
+            <div class="addProduct">
+                <h1>Add Product</h1>
+                <% if (errors.length > 0) { %>
+                    <% errors.forEach(element => { %>
+                        <small style="color:tomato"><%= element %> </small><br/>
+                    <% }) %>
+                <% } %>
+                <form action="/admin/saveProduct" method="POST" enctype="multipart/form-data">
+                    <!-- <input type="hidden" name="_csrf" value="<%= //csrfToken %>"/> -->
+                    <div class="inputControl">
+                        <label>Title : </label>
+                        <input type="text" name="title" />
+                    </div>
+                    <div class="inputControl">
+                        <label>Price : </label>
+                        <input type="number" name="price" />
+                    </div>
+                    <div class="inputControl">
+                        <label>Description : </label>
+                        <input type="text" name="description" />
+                    </div>
+                    <div class="inputControl">
+                        <label>Image : </label>
+                        <input type="file" name="image" />
+                    </div>
+                    <button class="btn" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="image">
+                <img src="../images/login-v2.svg" class="loginImg" alt="Login"/>
+            </div>
+        </div>
+
+            <!-- import footer file -->
+            <%- include('../includes/footer.ejs') %>

@@ -1,0 +1,65 @@
+<!-- import header file -->
+<%- include('../includes/header.ejs') %> 
+    <!-- css files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/card.css">
+  </head>
+  <body>
+    <!-- import navigation file -->
+    <%- include('../includes/navigation.ejs') %> 
+
+    <main>
+      <h1>Checkout</h1>
+      <h2>Card Items</h2>
+      <hr/>
+      <table>
+        <thead>
+            <tr>
+                <td><b>Product Title</b></td>
+                <td><b>Product Price</b></td>
+                <td><b>Amount</b></td>
+                <td><b>Cost</b></td>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let product of products) {%>
+                <tr>
+                    <td><%= product.productId.title %></td>
+                    <td><%= product.productId.price %></td>
+                    <td><%= product.quantity %></td>
+                    <td><%= (product.productId.price * product.quantity) %></td>
+                </tr>
+              <% } %>
+        </tbody>
+      </table>
+      <br/>
+      <hr/>
+      <br/>
+      <div class="card-items" style="text-align: center;">
+        <p><strong>Total : <%= totalSum %> $ </strong></p>
+        <br/>
+        <h5>Credit card Data</h5>
+        <div>
+            <button id="orderBtn101" class="btn">Order</button>
+            <script src="https://js.stripe.com/v3/"></script>
+            <script>
+                // pk_test_51Klc7QIx0ZhOngyz5j2cAjQoF9Y7fIsmB9Ff8uoLaeunzr0xU4okWrwYfpEkzpBvlyplFWoYrBqcfY0O89kiQPXE00m64qOgDl
+                var stripe = Stripe('pk_test_51Klc7QIx0ZhOngyz5j2cAjQoF9Y7fIsmB9Ff8uoLaeunzr0xU4okWrwYfpEkzpBvlyplFWoYrBqcfY0O89kiQPXE00m64qOgDl');
+                // var elements = stripe.elements({clientSecret: 'CLIENT_SECRET',});
+                let orderBtn = document.getElementById('orderBtn101');
+                orderBtn.addEventListener('click',()=>{
+                    stripe.redirectToCheckout({
+                        sessionId:'<%= sessionId %>'
+                    });
+                })
+            </script>
+
+        </div>
+        <br/>
+      <br/>
+    </div>
+    </main>
+
+<!-- import footer file -->
+<%- include('../includes/footer.ejs') %> 
