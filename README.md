@@ -1,5 +1,5 @@
 # Journey into The Deepth of NodeJs And ExpressJS
-## E-Shop Project
+# E-Shop Project
 ## Description of project functionality
 This project is an online store
 Where the user can buy products or sell his products to him also through the store.
